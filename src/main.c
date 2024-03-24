@@ -30,8 +30,9 @@ int main(int argc, char* argv[])
 {
     
     isProgramRunning = init_app(&app);  // initialize
- 
+
     initScene();
+
     while (isProgramRunning == SDL_TRUE)
     {
         /* Process delta time */

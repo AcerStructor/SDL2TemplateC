@@ -18,6 +18,7 @@
 typedef struct {
     void (*update)(float); // <- Pass delta time
     void (*render)(void);
+    void (*destroy)(void); // <- temporary for now
 } Delegate;
 
 typedef struct {
