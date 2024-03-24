@@ -1,8 +1,15 @@
+/**
+ *
+ * File Name: input.c
+ *
+ */
+
+
 #include "input.h"
 
 extern SDL_bool isProgramRunning;
 
-void process_key(SDL_Event* e)
+static void process_key(SDL_Event* e)
 {
     switch (e->key.keysym.sym)
     {

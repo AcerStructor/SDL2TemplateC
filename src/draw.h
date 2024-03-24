@@ -1,3 +1,15 @@
+/**
+ *
+ * File Name: draw.h
+ *
+ * Description:
+ *      This header file consists of functions
+ *      related to loading and drawing textures
+ *      which can serve as game sprites
+ *
+ */
+
+
 #ifndef _DRAW_H_
 #define _DRAW_H_
 

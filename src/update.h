@@ -4,8 +4,6 @@
 #include "defs.h"
 #include <SDL2/SDL.h>
 
-void frame_cap();
-
-float process_delta();
+void update();
 
 #endif // _UPDATE_H_

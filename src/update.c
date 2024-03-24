@@ -1,8 +1,8 @@
 #include "update.h"
 
-int last_frame_time = 0;
+static int last_frame_time = 0;
 
-void frame_cap()
+static void frame_cap()
 {
     int time_to_wait = FRAME_TARGET_TIME - (SDL_GetTicks() - last_frame_time);
 
@@ -14,7 +14,8 @@ void frame_cap()
     last_frame_time = SDL_GetTicks();
 }
 
-float process_delta()
+void update()
 {
-    return (SDL_GetTicks() - last_frame_time) / 1000.0f;
+    frame_cap();
+    // float delta = (SDL_GetTicks() - last_frame_time) / 1000.0f;
 }

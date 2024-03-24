@@ -11,12 +11,14 @@
 #ifndef _DEFS_H_
 #define _DEFS_H_
 
-/* Window */
+/* --- Window --- */
+/* -------------- */
 #define WINDOW_TITLE         "C Template"
 #define WINDOW_WIDTH         1280
 #define WINDOW_HEIGHT        720
 
-/* Framecapping */
+/* --- Framecapping --- */
+/* -------------------- */
 #define FPS                 60
 #define FRAME_TARGET_TIME   (1000 / FPS)
 

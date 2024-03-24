@@ -1,3 +1,9 @@
+/**
+ *
+ * File Name: init.c
+ *
+ */
+
 #include "init.h"
 
 SDL_bool init_app(App* app)

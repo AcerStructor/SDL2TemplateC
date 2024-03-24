@@ -1,3 +1,14 @@
+/**
+ *
+ * File Name: input.h
+ *
+ * Description:
+ *      This header file consists of functions
+ *      which are related to processing user
+ *      input such as key and mouse inputs.
+ */
+
+
 #ifndef _INPUT_H_
 #define _INPUT_H_
 
