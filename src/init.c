@@ -24,7 +24,7 @@ SDL_bool init_app()
 
     if (SDL_Init(SDL_INIT_VIDEO) != 0)
     {
-        fprintf(stderr, "[ERROR] - Couldn't initialize SDL2: %s\n", SDL_GetError());
+        fprintf(stderr, "ERROR: [X] - Couldn't initialize SDL2: %s\n", SDL_GetError());
         return SDL_FALSE;
     }
 
@@ -37,7 +37,7 @@ SDL_bool init_app()
 
     if (app.window == NULL)
     {
-        fprintf(stderr, "[ERROR] - Couldn't initialize SDL2 window: %s\n", SDL_GetError());
+        fprintf(stderr, "ERROR: [X] - Couldn't initialize SDL2 window: %s\n", SDL_GetError());
         return SDL_FALSE;
     }
 
@@ -55,7 +55,7 @@ SDL_bool init_app()
 
     if (app.renderer == NULL)
     {
-        fprintf(stderr, "[ERROR] - Couldn't initialize SDL2 renderer: %s\n", SDL_GetError());
+        fprintf(stderr, "ERROR: [X] - Couldn't initialize SDL2 renderer: %s\n", SDL_GetError());
         return SDL_FALSE;
     }
 
