@@ -29,7 +29,7 @@ static void frame_cap();
 int main(int argc, char* argv[])
 {
     
-    isProgramRunning = init_app(&app);  // initialize
+    isProgramRunning = init_app();  // initialize
 
     initScene();
 
@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
     app.delegate.destroy(); // temporary
 
     // deallocate app
-    destroy_app(&app);
+    destroy_app();
 
     return EXIT_SUCCESS;
 }
