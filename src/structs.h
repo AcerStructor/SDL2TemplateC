@@ -22,9 +22,9 @@ typedef struct {
 } Delegate;
 
 typedef struct {
-    SDL_Window* window;
-    SDL_Renderer* renderer;
-    Delegate delegate;
+    SDL_Window*     window;
+    SDL_Renderer*   renderer;
+    Delegate        delegate;
 } App;
 
 typedef struct {
@@ -33,8 +33,8 @@ typedef struct {
 } Position;
 
 typedef struct {
-    Position pos;
-    SDL_Texture* sprite;
+    Position        pos;
+    SDL_Texture*    sprite;
 } Entity;
 
 #endif // _STRUCTS_H_
