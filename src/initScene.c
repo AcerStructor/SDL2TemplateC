@@ -24,7 +24,7 @@ void initScene()
 
     entity = (Entity*)malloc(sizeof(Entity));
 
-    entity->sprite = load_texture(app, "res/sprites/placeholder.png");
+    entity->sprite = load_texture("res/sprites/placeholder.png");
     entity->pos.x = WINDOW_WIDTH / 2;
     entity->pos.y = WINDOW_HEIGHT / 2;
 }
@@ -39,7 +39,7 @@ static void render()
     SDL_SetRenderDrawColor(app.renderer, 12, 12, 12, 255);
     SDL_RenderClear(app.renderer);
 
-    draw(app, entity->sprite, entity->pos);
+    draw(entity->sprite, entity->pos);
 
     SDL_RenderPresent(app.renderer);
 }
