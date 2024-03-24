@@ -12,6 +12,8 @@ extern App      app;
 Entity         *entity; // for testing
 
 
+/* --- Functions --- */
+/* ----------------- */
 static void update(float delta);
 static void render();
 static void destroyScene(); // temporary
@@ -34,7 +36,7 @@ void initScene()
 
 static void update(float delta)
 {
-
+    // TODO
 }
 
 static void render()
