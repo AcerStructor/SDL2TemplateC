@@ -15,30 +15,29 @@
 #include "init.h"
 #include "draw.h"
 #include "input.h"
-#include "render.h"
+#include "initScene.h"
+
+static int  last_frame_time = 0;
 
 /* --- Global variables --- */
 /* ------------------------ */
-static int last_frame_time = 0;
-SDL_bool isProgramRunning = SDL_FALSE;
-
-/* --- Game Objects --- */
-/* -------------------- */
+SDL_bool    isProgramRunning = SDL_FALSE;
+App         app;
 
 static void frame_cap();
 
 int main(int argc, char* argv[])
 {
-    App app;
     
     isProgramRunning = init_app(&app);  // initialize
-    
+ 
+    initScene();
     while (isProgramRunning == SDL_TRUE)
     {
         process_input();
         frame_cap();
-        update();
-        render(app);
+        app.delegate.update();
+        app.delegate.render();
     }
 
     // deallocate app
@@ -46,7 +45,6 @@ int main(int argc, char* argv[])
 
     return EXIT_SUCCESS;
 }
-
 
 static void frame_cap()
 {
