@@ -15,8 +15,8 @@
 #include "common.h"
 #include "structs.h"
 
-SDL_Texture* load_texture(App app, char* filename);
+SDL_Texture* load_texture(char* filepath);
 
-void draw(App app, SDL_Texture* texture, Position pos);
+void draw(SDL_Texture* texture, Position pos);
 
 #endif // _DRAW_H_

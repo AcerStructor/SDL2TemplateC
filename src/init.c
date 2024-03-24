@@ -4,9 +4,15 @@
  *
  */
 
+#include "defs.h"
 #include "init.h"
+#include "structs.h"
 
-SDL_bool init_app(App* app)
+/* --- global variable --- */
+/* ----------------------- */
+extern App      app;
+
+SDL_bool init_app()
 {
     /* SDL2 Flags */
     const int windowFlags = SDL_WINDOW_MINIMIZED;
@@ -18,10 +24,10 @@ SDL_bool init_app(App* app)
         return SDL_FALSE;
     }
 
-    app->window = SDL_CreateWindow(WINDOW_TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+    app.window = SDL_CreateWindow(WINDOW_TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                    WINDOW_WIDTH, WINDOW_HEIGHT, windowFlags);
 
-    if (app->window == NULL)
+    if (app.window == NULL)
     {
         fprintf(stderr, "[ERROR] - Couldn't initialize SDL2 window: %s\n", SDL_GetError());
         return SDL_FALSE;
@@ -29,9 +35,9 @@ SDL_bool init_app(App* app)
 
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
 
-    app->renderer = SDL_CreateRenderer(app->window, -1, rendererFlags);
+    app.renderer = SDL_CreateRenderer(app.window, -1, rendererFlags);
 
-    if (app->renderer == NULL)
+    if (app.renderer == NULL)
     {
         fprintf(stderr, "[ERROR] - Couldn't initialize SDL2 renderer: %s\n", SDL_GetError());
         return SDL_FALSE;
@@ -42,10 +48,10 @@ SDL_bool init_app(App* app)
     return SDL_TRUE;
 }
 
-void destroy_app(App* app)
+void destroy_app()
 {
     IMG_Quit();
-    SDL_DestroyRenderer(app->renderer);
-    SDL_DestroyWindow(app->window);
+    SDL_DestroyRenderer(app.renderer);
+    SDL_DestroyWindow(app.window);
     SDL_Quit();
 }

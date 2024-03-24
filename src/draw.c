@@ -6,18 +6,22 @@
 
 #include "draw.h"
 
-SDL_Texture* load_texture(App app, char* filename)
+/* --- global variable --- */
+/* ----------------------- */
+extern App      app;
+
+SDL_Texture* load_texture(char* filepath)
 {
     SDL_Texture* texture;
 
-    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Loading %s", filename);
+    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Loading %s", filepath);
 
-    texture = IMG_LoadTexture(app.renderer, filename);
+    texture = IMG_LoadTexture(app.renderer, filepath);
 
     return texture;
 }
 
-void draw(App app, SDL_Texture* texture, Position pos)
+void draw(SDL_Texture* texture, Position pos)
 {
     SDL_Rect dest;
 
