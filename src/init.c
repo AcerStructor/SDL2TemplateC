@@ -78,7 +78,8 @@ void destroy_app()
 {
     /* ----- Deallocating ----- */
     /* ------------------------ */
-    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "\n -----{ DEALLOCATING SDL2 }----- \n\n");
+    putchar('\n');
+    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, " -----{ DEALLOCATING SDL2 }----- \n\n");
 
     IMG_Quit();
     SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, " [✓] - IMG deallocated \n");
