@@ -4,7 +4,6 @@
  *
  */
 
-
 #include "input.h"
 
 extern SDL_bool isProgramRunning;

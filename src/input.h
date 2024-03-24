@@ -8,7 +8,6 @@
  *      input such as key and mouse inputs.
  */
 
-
 #ifndef _INPUT_H_
 #define _INPUT_H_
 
