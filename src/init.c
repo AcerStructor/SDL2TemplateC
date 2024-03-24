@@ -82,13 +82,13 @@ void destroy_app()
     SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, " -----{ DEALLOCATING SDL2 }----- \n\n");
 
     IMG_Quit();
-    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, " [✓] - IMG deallocated \n");
+    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "[✓] - IMG deallocated \n");
     
     SDL_DestroyRenderer(app.renderer);
-    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, " [✓] - Renderer deallocated \n");
+    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "[✓] - Renderer deallocated \n");
     
     SDL_DestroyWindow(app.window);
-    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, " [✓] - Window deallocated \n\n");
+    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "[✓] - Window deallocated \n\n");
 
     SDL_Quit();
 }
