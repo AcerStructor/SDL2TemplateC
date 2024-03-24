@@ -7,17 +7,13 @@
 #include <SDL2/SDL.h>
 #include "input.h"
 
-extern SDL_bool isProgramRunning;
+/* --- Global Variable --- */
+/* ----------------------- */
+extern SDL_bool     isProgramRunning;
 
-static void process_key(SDL_Event* e)
-{
-    switch (e->key.keysym.sym)
-    {
-        case SDLK_ESCAPE:
-            isProgramRunning = SDL_FALSE;
-            break;
-    }
-}
+/* --- Functions --- */
+/* ----------------- */
+static void process_key(SDL_Event* e);
 
 void process_input()
 {
@@ -35,5 +31,15 @@ void process_input()
                 process_key(&e);
                 break;
         }
+    }
+}
+
+static void process_key(SDL_Event* e)
+{
+    switch (e->key.keysym.sym)
+    {
+        case SDLK_ESCAPE:
+            isProgramRunning = SDL_FALSE;
+            break;
     }
 }

@@ -28,7 +28,6 @@ static void frame_cap();
 
 int main(int argc, char* argv[])
 {
-    
     isProgramRunning = init_app();  // initialize
 
     initScene();
@@ -38,6 +37,7 @@ int main(int argc, char* argv[])
         /* Process delta time */
         float delta = (SDL_GetTicks() - last_frame_time) / 1000.0f;
 
+        /* Process Program */
         process_input();
         frame_cap();
         app.delegate.update(delta);
