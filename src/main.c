@@ -44,6 +44,8 @@ int main(int argc, char* argv[])
         app.delegate.render();
     }
 
+    app.delegate.destroy(); // temporary
+
     // deallocate app
     destroy_app(&app);
 
