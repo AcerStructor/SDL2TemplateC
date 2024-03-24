@@ -24,7 +24,6 @@ SDL_bool isProgramRunning = SDL_FALSE;
 
 /* --- Game Objects --- */
 /* -------------------- */
-Entity* entities; 
 
 int main(int argc, char* argv[])
 {

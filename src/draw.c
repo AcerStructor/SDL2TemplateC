@@ -4,7 +4,6 @@
  *
  */
 
-
 #include "draw.h"
 
 SDL_Texture* load_texture(App app, char* filename)
