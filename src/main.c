@@ -20,10 +20,13 @@
 
 /* --- Global variables --- */
 /* ------------------------ */
+static int last_frame_time = 0;
 SDL_bool isProgramRunning = SDL_FALSE;
 
 /* --- Game Objects --- */
 /* -------------------- */
+
+static void frame_cap();
 
 int main(int argc, char* argv[])
 {
@@ -34,6 +37,7 @@ int main(int argc, char* argv[])
     while (isProgramRunning == SDL_TRUE)
     {
         process_input();
+        frame_cap();
         update();
         render(app);
     }
@@ -43,3 +47,17 @@ int main(int argc, char* argv[])
 
     return EXIT_SUCCESS;
 }
+
+
+static void frame_cap()
+{
+    int time_to_wait = FRAME_TARGET_TIME - (SDL_GetTicks() - last_frame_time);
+
+    if (time_to_wait > 0 && time_to_wait <= FRAME_TARGET_TIME)
+    {
+        SDL_Delay(time_to_wait);
+    }
+
+    last_frame_time = SDL_GetTicks();
+}
+
