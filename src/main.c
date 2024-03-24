@@ -15,7 +15,6 @@
 #include "init.h"
 #include "draw.h"
 #include "input.h"
-#include "update.h"
 #include "render.h"
 
 /* --- Global variables --- */
