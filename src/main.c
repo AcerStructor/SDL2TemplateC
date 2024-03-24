@@ -24,6 +24,8 @@ static int  last_frame_time = 0;
 SDL_bool    isProgramRunning = SDL_FALSE;
 App         app;
 
+/* --- Functions --- */
+/* ----------------- */
 static void frame_cap();
 
 int main(int argc, char* argv[])
