@@ -16,7 +16,7 @@
 #include <SDL2/SDL_image.h>
 
 typedef struct {
-    void (*update)(void);
+    void (*update)(float); // <- Pass delta time
     void (*render)(void);
 } Delegate;
 

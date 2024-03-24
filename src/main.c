@@ -34,9 +34,12 @@ int main(int argc, char* argv[])
     initScene();
     while (isProgramRunning == SDL_TRUE)
     {
+        /* Process delta time */
+        float delta = (SDL_GetTicks() - last_frame_time) / 1000.0f;
+
         process_input();
         frame_cap();
-        app.delegate.update();
+        app.delegate.update(delta);
         app.delegate.render();
     }
 

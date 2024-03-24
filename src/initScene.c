@@ -7,7 +7,7 @@ extern App      app;
 
 /* --- Game Objects --- */
 /* -------------------- */
-static void update();
+static void update(float delta);
 static void render();
 
 void initScene()
@@ -16,7 +16,7 @@ void initScene()
     app.delegate.render = render;
 }
 
-static void update()
+static void update(float delta)
 {
 
 }
