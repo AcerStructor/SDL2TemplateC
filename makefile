@@ -24,7 +24,7 @@ ifeq ($(BUILD), RELEASE)
 endif
 
 ifeq ($(BUILD), DEBUG)
-	CFLAGS += -g -DDEBUG
+	CFLAGS += -g -DDEBUG -O0
 endif
 
 $(TARGET): $(OBJ)

@@ -16,8 +16,14 @@
 #include <SDL2/SDL_image.h>
 
 typedef struct {
+    void (*update)(void);
+    void (*render)(void);
+} Delegate;
+
+typedef struct {
     SDL_Window* window;
     SDL_Renderer* renderer;
+    Delegate delegate;
 } App;
 
 typedef struct {
