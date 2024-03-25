@@ -34,6 +34,9 @@ void initScene()
     app.delegate.render     = render;
     app.delegate.destroy    = destroyScene;
 
+    /* --- Assign Program State --- */
+    app.state = STATE_GAME;
+
     /* --- Allocate Game Objects --- */
     entity = (Entity*)malloc(sizeof(Entity));
 

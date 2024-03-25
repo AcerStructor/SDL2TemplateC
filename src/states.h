@@ -13,10 +13,10 @@
 #define _STATES_H_
 
 typedef enum {
-    SPLASH_SCREEN,
-    MAIN_MENU,
-    GAME,
-    GAME_OVER,
+    STATE_SPLASH_SCREEN,
+    STATE_MAIN_MENU,
+    STATE_GAME,
+    STATE_GAME_OVER,
 } ProgramState;
 
 #endif // _STATES_H_
