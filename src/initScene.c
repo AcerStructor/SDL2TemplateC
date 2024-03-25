@@ -9,7 +9,7 @@ extern App      app;
 
 /* --- Game Objects --- */
 /* -------------------- */
-Entity         *entity; // for testing
+static Entity  *entity; // for testing
 
 
 /* --- Functions --- */
