@@ -15,6 +15,8 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+#include "states.h"
+
 typedef struct {
     void (*update)(float); // <- Pass delta time
     void (*render)(void);
@@ -25,6 +27,7 @@ typedef struct {
     SDL_Window     *window;
     SDL_Renderer   *renderer;
     Delegate        delegate;
+    ProgramState    state;
 } App;
 
 typedef struct {

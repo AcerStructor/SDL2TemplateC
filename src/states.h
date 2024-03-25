@@ -12,6 +12,11 @@
 #ifndef _STATES_H_
 #define _STATES_H_
 
-// TODO
+typedef enum {
+    SPLASH_SCREEN,
+    MAIN_MENU,
+    GAME,
+    GAME_OVER,
+} ProgramState;
 
 #endif // _STATES_H_
