@@ -20,6 +20,15 @@ static void destroyScene(); // temporary
 
 void initScene()
 {
+    putchar('\n');
+    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, " -----{ SCENE }----- ");
+
+    if (app.delegate.destroy != NULL)
+    {
+        SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "... Destroying previous scene");
+        app.delegate.destroy();
+    }
+
     /* --- Assign Delegates --- */
     app.delegate.update     = update;
     app.delegate.render     = render;
@@ -52,4 +61,5 @@ static void render()
 static void destroyScene()
 {
     free(entity);
+    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "[✓] - Entity destroyed!\n");
 }

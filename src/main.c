@@ -15,7 +15,7 @@
 #include "init.h"
 #include "draw.h"
 #include "input.h"
-#include "initScene.h"
+#include "initSplashScreen.h"
 
 static int  last_frame_time = 0;
 
@@ -32,7 +32,8 @@ int main(int argc, char* argv[])
 {
     isProgramRunning = init_app();  // initialize
 
-    initScene();
+    //initScene();
+    initSplashScreen();
 
     while (isProgramRunning == SDL_TRUE)
     {
