@@ -15,6 +15,7 @@
 #include "init.h"
 #include "draw.h"
 #include "input.h"
+//#include "initScene.h"
 #include "initSplashScreen.h"
 
 static int  last_frame_time = 0;
@@ -26,7 +27,7 @@ App         app;
 
 /* --- Functions --- */
 /* ----------------- */
-static void frame_cap();
+static void frame_cap(float* delta);
 
 int main(int argc, char* argv[])
 {
@@ -37,14 +38,17 @@ int main(int argc, char* argv[])
 
     while (isProgramRunning == SDL_TRUE)
     {
-        /* Process delta time */
-        float delta = (SDL_GetTicks() - last_frame_time) / 1000.0f;
+        /* Process Program Input */
+        process_input();
+        
+        /* Process Frame Capping and delta time */
+        float delta;
+        frame_cap(&delta);
 
         /* Process Program */
-        process_input();
-        frame_cap();
         app.delegate.update(delta);
         app.delegate.render();
+
     }
 
     app.delegate.destroy(); // temporary
@@ -55,7 +59,7 @@ int main(int argc, char* argv[])
     return EXIT_SUCCESS;
 }
 
-static void frame_cap()
+static void frame_cap(float* delta)
 {
     int time_to_wait = FRAME_TARGET_TIME - (SDL_GetTicks() - last_frame_time);
 
@@ -64,6 +68,7 @@ static void frame_cap()
         SDL_Delay(time_to_wait);
     }
 
+    *delta = (SDL_GetTicks() - last_frame_time) / 1000.0f;
+
     last_frame_time = SDL_GetTicks();
 }
-

@@ -21,7 +21,7 @@ SDL_Texture* load_texture(char* filepath)
     return texture;
 }
 
-void draw(SDL_Texture* texture, Transform transform)
+void draw(SDL_Texture* texture, const Transform transform)
 {
     /* Declaration */
     SDL_Rect dest;

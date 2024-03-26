@@ -16,7 +16,7 @@ static Entity  *entity; // for testing
 /* ----------------- */
 static void update(float delta);
 static void render();
-static void destroyScene(); // temporary
+static void destroyScene();
 
 void initScene()
 {
@@ -48,7 +48,7 @@ void initScene()
 
 static void update(float delta)
 {
-    // TODO
+    entity->transform.pos.x += 150 * delta;
 }
 
 static void render()

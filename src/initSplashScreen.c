@@ -47,7 +47,7 @@ static void update(float delta)
 
     //SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Frametime = %0.2f\n", frameTime);
 
-    if (frameTime >= 0.20f)
+    if (frameTime >= 4.5f)
     {
         frameTime = 0; // reset frametime
 
