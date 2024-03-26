@@ -36,7 +36,13 @@ typedef struct {
 } Position;
 
 typedef struct {
-    Position        pos;
+    Position    pos;
+    // TODO:    rotation
+    // TODO     scale
+} Transform;
+
+typedef struct {
+    Transform       transform;
     SDL_Texture*    sprite;
 } Entity;
 

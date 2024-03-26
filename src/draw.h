@@ -17,6 +17,6 @@
 
 SDL_Texture* load_texture(char* filepath);
 
-void draw(SDL_Texture* texture, Position pos);
+void draw(SDL_Texture* texture, Transform transform);
 
 #endif // _DRAW_H_

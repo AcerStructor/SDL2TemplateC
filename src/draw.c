@@ -21,14 +21,22 @@ SDL_Texture* load_texture(char* filepath)
     return texture;
 }
 
-void draw(SDL_Texture* texture, Position pos)
+void draw(SDL_Texture* texture, Transform transform)
 {
+    /* Declaration */
     SDL_Rect dest;
-
-    dest.x = pos.x;
-    dest.y = pos.y;
+    Position localOrigin;
 
     SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
+
+    /* Set Local Origin */
+    localOrigin.x = dest.w / 2;
+    localOrigin.y = dest.h / 2;
+
+    /* Set local rect position */
+    dest.x = transform.pos.x - localOrigin.x;
+    dest.y = transform.pos.y - localOrigin.y;
     
+    /* Draw to game scene */
     SDL_RenderCopy(app.renderer, texture, NULL, &dest);
 }
